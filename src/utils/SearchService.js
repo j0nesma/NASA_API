@@ -6,7 +6,7 @@ module.exports = function(searchValue){
     let getImage = function(searchValue, callback){
         console.log(searchValue);
         let data = "";
-        req = http.get(rootUrl+"/search?q="+searchValue,(res)=>{
+        req = http.get(rootUrl+"/search?q="+searchValue+"",(res)=>{
             res.setEncoding('utf8');
             res.on('data', function (d) {
               data+=d;

@@ -3,7 +3,7 @@ module.exports = function(searchValue){
     const http = require('http');
     const rootUrl = 'https://images-api.nasa.gov/';
 
-    let getImage = function(searchValue, callback){
+    let search = (searchValue, callback)=>{
         console.log(searchValue);
         let data = "";
         req = http.get(rootUrl+"/search?q="+searchValue+"",(res)=>{
@@ -13,7 +13,7 @@ module.exports = function(searchValue){
             });
             res.on("end", function(){
                 console.log(JSON.parse(data))
-                callback(JSON.parse(data));
+                callback(sortMedia(JSON.parse(data)));
             })
           });
           
@@ -22,8 +22,42 @@ module.exports = function(searchValue){
         });
     }
 
+    let sortMedia = (object)=>{
+        let temp = {
+            Audio:[],
+            Image:[],
+            Video:[],
+            Other:[]
+        }
+        console.log(object);
+        object.collection.items.forEach(element => {
+            switch(element.data[0].media_type) {
+                case "image":
+                    temp.Image.push(element);
+                    break;
+                case "audio":
+                    temp.Audio.push(element);
+                    break;
+                case "video":
+                    temp.Video.push(element);
+                    break;
+                default:
+                    temp.Other.push(element);
+            }
+        });
+        return temp;
+    }
+
+    let getAudio = ()=>{
+
+    }
+
+    let getVideo = ()=>{
+
+    }
+
     return {
-        'getImage':getImage
+        'search':search
     }
 }
     

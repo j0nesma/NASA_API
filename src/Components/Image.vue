@@ -1,12 +1,5 @@
 <template>
-<div>
-<view-wrapper class="hm-zoom" src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(7).jpg" alt="">
-
-</view-wrapper>
-
-<b-img  thumbnail fluid :src=imgSrc  width="100%" height="100%" alt="Thumbnail" />
-    
-  </div>
+  <b-img  thumbnail fluid :src=imgSrc id="thumbnailImage" alt="Thumbnail" />
 </template>
 
 <script lang="js">
@@ -27,8 +20,9 @@ export default Vue.extend({
 </script>
 
 
-<style>
-imagebox {
-  
-};
+<style lang="scss">
+#thumbnailImage{
+  width: 5em;
+  height: auto;
+}
 </style>

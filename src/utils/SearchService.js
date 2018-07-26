@@ -52,12 +52,30 @@ module.exports = function(searchValue){
 
     }
 
+    let getObjectFromUrl=(url, callback)=>{
+        let data = "";
+        req = http.get(url,(res)=>{
+            res.setEncoding('utf8');
+            res.on('data', function (d) {
+              data+=d;
+            });
+            res.on("end", function(){
+                callback(JSON.parse(data));
+            })
+          });
+          
+        req.on('error', function(e) {
+            console.log('problem with request: ' + e.message);
+        });
+    }
+
     let getVideo = ()=>{
 
     }
 
     return {
-        'search':search
+        'search':search,
+        'getObjectFromUrl':getObjectFromUrl
     }
 }
     

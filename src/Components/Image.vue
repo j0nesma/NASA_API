@@ -1,5 +1,5 @@
 <template>
-  <b-img  thumbnail fluid :src=imgSrc id="thumbnailImage" alt="Thumbnail" />
+  <b-col><router-link to="/about" class="nav-link"><b-img v-on:click="store" thumbnail fluid :src=data.links[0].href  id="thumbnailImage" alt="Thumbnail" /></router-link></b-col>
 </template>
 
 <script lang="js">
@@ -8,12 +8,15 @@ import SearchService from '../utils/SearchService'
 
 export default Vue.extend({
    name: 'imageContainer',
-   props:['imgSrc'],
+   props:['data'],
    data () {
     return {
     }
   },
   methods:{ 
+    store(evt){
+      this.$store.state.Data = this.$props.data;
+    }
    }
     
 })
@@ -22,7 +25,7 @@ export default Vue.extend({
 
 <style lang="scss">
 #thumbnailImage{
-  width: 5em;
-  height: auto;
+  min-width: 5em;
+  height: 5em;
 }
 </style>

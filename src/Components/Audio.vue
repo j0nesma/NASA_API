@@ -1,9 +1,9 @@
 <template>
-    <b-container>
-        <div class="text-center my-3">
+    <b-container  v-on:click="store">
+        <router-link to="/about" class="nav-link">
             <img thumbnail fluid id = "audioIcon" src='../assets/audio.png'  width="100%" height="100%" alt="Thumbnail" />
-            <span id="title">{{desc}}</span>
-        </div>
+            <span id="title">{{audioData.data[0].description}}</span>
+        </router-link>
     </b-container>
 </template>
 
@@ -13,12 +13,15 @@ import SearchService from '../utils/SearchService'
 
 export default Vue.extend({
    name: 'audioContainer',
-   props:['desc'],
+   props:['audioData'],
    data () {
     return {
     }
   },
   methods:{ 
+      store(evt){
+            this.$store.state.Data = this.$props.audioData;
+        }
    }
     
 })

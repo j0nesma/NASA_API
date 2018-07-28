@@ -48,10 +48,29 @@ module.exports = function(searchValue){
         return temp;
     }
 
-    let getAudio = ()=>{
+    let getAudioLink = (url,callback)=>{
+        let link = ''
+        getObjectFromUrl(url,(res)=>{
+          for (let i = 0; i < res.length; i++) {
+            if(res[i].endsWith(".mp3")==true){
+                link = res[i];
+            }
+          }
+          callback(link);
+        })
+      }
 
-    }
-
+      let getVideoLink = (url,callback)=>{
+        let link = ''
+        getObjectFromUrl(url,(res)=>{
+          for (let i = 0; i < res.length; i++) {
+            if(res[i].endsWith(".mp4")==true){
+                link = res[i];
+            }
+          }
+          callback(link);
+        })
+      }
     let getObjectFromUrl=(url, callback)=>{
         let data = "";
         req = http.get(url,(res)=>{
@@ -75,7 +94,9 @@ module.exports = function(searchValue){
 
     return {
         'search':search,
-        'getObjectFromUrl':getObjectFromUrl
+        'getObjectFromUrl':getObjectFromUrl,
+        'getAudioLink':getAudioLink,
+        'getVideoLink':getVideoLink
     }
 }
     

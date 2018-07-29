@@ -1,8 +1,8 @@
 <template>
     <b-container  v-on:click="store">
-        <router-link to="/about" class="nav-link">
-            <img thumbnail fluid id = "audioIcon" src='../assets/audio.png'  width="100%" height="100%" alt="Thumbnail" />
-            <span id="title">{{audioData.data[0].description}}</span>
+        <router-link to="/asset/" class="nav-link">
+            <span id="title"><img thumbnail fluid id = "audioIcon" src='../assets/audio.png'  width="10em" height="10em" alt="Thumbnail" />
+            {{audioData.data[0].description}}</span>
         </router-link>
     </b-container>
 </template>
@@ -35,7 +35,7 @@ export default Vue.extend({
 }
 #title{
   display: block;
-  width: 10em;
+  width: 15em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

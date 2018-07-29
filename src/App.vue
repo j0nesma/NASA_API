@@ -1,5 +1,5 @@
 <template>
-  <b-container>
+  <b-container class="app">
     <router-view></router-view>
   </b-container>
 </template>
@@ -16,14 +16,15 @@ export default {
 </script>
 
 <style>
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0b3d91;
   margin-top: 60px;
 }
+
 
 h1, h2 {
   font-weight: normal;
@@ -40,6 +41,7 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: #0b3d91;
 }
+
 </style>

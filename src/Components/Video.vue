@@ -1,8 +1,8 @@
 <template>
     <b-container v-on:click="store">
         <router-link to="/about" class="nav-link">
-        <b-col><img id = "videoIcon" src='../assets/video.png' alt="Thumbnail"/>
-        <span id="title">{{vidData.data[0].nasa_id}}</span></b-col>
+        <span><img id = "videoIcon" src='../assets/video.png' alt="Thumbnail"/>
+        {{vidData.data[0].nasa_id}}</span>
         </router-link>
     </b-container>
 </template>
@@ -28,15 +28,9 @@ export default Vue.extend({
 
 
 <style>
-#audioIcon{
+#videoIcon{
     width: 2em;
     height: auto;
 }
-#title{
-  display: block;
-  width: 12em;
-  overflow: hidden;
-  /* white-space: nowrap; */
-  text-overflow: ellipsis;
-}
+
 </style>

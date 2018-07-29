@@ -4,7 +4,6 @@ module.exports = function(searchValue){
     const rootUrl = 'https://images-api.nasa.gov/';
 
     let search = (searchValue, callback)=>{
-        console.log(searchValue);
         let data = "";
         req = http.get(rootUrl+"/search?q="+searchValue+"",(res)=>{
             res.setEncoding('utf8');
@@ -71,6 +70,7 @@ module.exports = function(searchValue){
           callback(link);
         })
       }
+
     let getObjectFromUrl=(url, callback)=>{
         let data = "";
         req = http.get(url,(res)=>{
@@ -86,10 +86,6 @@ module.exports = function(searchValue){
         req.on('error', function(e) {
             console.log('problem with request: ' + e.message);
         });
-    }
-
-    let getVideo = ()=>{
-
     }
 
     return {

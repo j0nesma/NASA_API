@@ -1,11 +1,7 @@
 <template>
-    <b-card :title=mediaData.data[0].title
-            style="max-width: 300rem;"
-    >
+    <b-card id="desc" style="max-width: 50rem;">
         <b-card-body>
-            <p class="card-text">
                 {{mediaData.data[0].description}} 
-            </p>
         </b-card-body>
     </b-card>
 </template>
@@ -30,5 +26,7 @@ export default Vue.extend({
 
 
 <style lang="scss">
-
+#desc{
+    border:none;
+}
 </style>

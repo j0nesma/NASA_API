@@ -17,7 +17,7 @@ const router = new VueRouter({
   base: __dirname,
   routes: [
     { path: '/', component: SearchPage },
-    { path: '/about', component: AssestPage },
+    { path: '/asset/', component: AssestPage },
   ]
 });
 

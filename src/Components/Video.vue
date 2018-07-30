@@ -1,6 +1,6 @@
 <template>
     <b-container v-on:click="store">
-        <router-link to="/about" class="nav-link">
+        <router-link to="/asset/" class="nav-link">
         <span><img id = "videoIcon" src='../assets/video.png' alt="Thumbnail"/>
         {{vidData.data[0].nasa_id}}</span>
         </router-link>

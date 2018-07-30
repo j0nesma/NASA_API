@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/about" class="nav-link"><b-img v-on:click="store" thumbnail fluid :src=data.links[0].href  id="thumbnailImage" alt="Thumbnail" /></router-link>
+  <router-link to=" to="/asset/" class="nav-link"><b-img v-on:click="store" thumbnail fluid :src=data.links[0].href  id="thumbnailImage" alt="Thumbnail" /></router-link>
 </template>
 
 <script lang="js">
